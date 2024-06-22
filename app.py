@@ -1,4 +1,4 @@
-#app.py
+# app.py
 
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mail import Mail, Message
@@ -57,4 +57,4 @@ def senha_redefinida():
     return render_template('senha_redefinida.html')
 
 if __name__ == '__main__':
-    app.run(port=8000)
+    app.run()
