@@ -23,7 +23,7 @@ def solicitar_redefinicao():
             token = s.dumps(email, salt='email-confirm')
             link = url_for('redefinir_senha', token=token, _external=True)
             msg = Message('Solicitação de Redefinição de Senha', sender=app.config['MAIL_USERNAME'], recipients=[email])
-            msg.body = f'Olá {usuario[2]},\n\nPor favor, use o seguinte link para redefinir sua senha: {link}'
+            msg.body = f'Olá {usuario["username"]},\n\nPor favor, use o seguinte link para redefinir sua senha: {link}'
             mail.send(msg)
             flash('Um link de redefinição de senha foi enviado para seu email.', 'info')
         else:
