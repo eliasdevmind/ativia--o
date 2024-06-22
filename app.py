@@ -22,8 +22,8 @@ def solicitar_redefinicao():
         if usuario:
             token = s.dumps(email, salt='email-confirm')
             link = url_for('redefinir_senha', token=token, _external=True)
-            msg = Message('Solicitação de Redefinição de Senha Jogo Maré', sender=app.config['MAIL_USERNAME'], recipients=[email])
-            msg.body = f'Olá {usuario[2]},\n\nPor favor, use o seguinte link para redefinir sua senha no Jogo Maré: {link}'
+            msg = Message('Solicitação de Redefinição de Senha', sender=app.config['MAIL_USERNAME'], recipients=[email])
+            msg.body = f'Olá {usuario[2]},\n\nPor favor, use o seguinte link para redefinir sua senha: {link}'
             mail.send(msg)
             flash('Um link de redefinição de senha foi enviado para seu email.', 'info')
         else:
@@ -34,7 +34,7 @@ def solicitar_redefinicao():
 @app.route('/redefinir_senha/<token>', methods=['GET', 'POST'])
 def redefinir_senha(token):
     try:
-        email = s.loads(token, salt='email-confirm', max_age=3600)
+        email = s.loads(token, salt='email-confirm', max_age=3600)  # Link válido por 1 hora (3600 segundos)
     except:
         flash('O link é inválido ou expirou.', 'danger')
         return redirect(url_for('solicitar_redefinicao'))
