@@ -1,6 +1,5 @@
-#config.py
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -11,8 +10,4 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.getenv('EMAIL_USER')
     MAIL_PASSWORD = os.getenv('EMAIL_PASS')
-    MYSQL_HOST = os.getenv('MYSQL_HOST')
-    MYSQL_USER = os.getenv('MYSQL_USER')
-    MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
-    MYSQL_DB = os.getenv('MYSQL_DB')
-    MYSQL_CURSORCLASS = 'DictCursor'
+    FIREBASE_CREDENTIALS = 'path/to/your-firebase-adminsdk.json'
