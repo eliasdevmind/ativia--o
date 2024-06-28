@@ -4,6 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redefinir Senha</title>
+    <style>
+        :root {
+            --color-primary: #100d29;
+            --color-secondary: #fd4242;
+            --color-tertiary: #6cb6f4;
+            --color-highlight: #fd7b7b;
+            --color-gray: #8892b0;
+            --font-sans: "Inter", sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-gray);
+            background-color: #f0f0f0; /* Exemplo de cor de fundo */
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--color-primary);
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--color-primary);
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: var(--color-secondary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--color-highlight);
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .success {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <h2>Redefinir Senha</h2>
@@ -21,5 +96,3 @@
     {% endwith %}
 </body>
 </html>
-
-
